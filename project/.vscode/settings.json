@@ -1,0 +1,17 @@
+{
+    "cSpell.words": [
+        "ciphertext",
+        "decryptor",
+        "encryptor",
+        "Fernet",
+        "keypair",
+        "padder",
+        "PKCS",
+        "SQLALCHEMY",
+        "Unpad",
+        "unpadder",
+        "urandom",
+        "werkzeug",
+        "wtforms"
+    ]
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>View Message</h2>
+    <div class="message-container">
+        <div class="message-details">
+            <p><strong>From:</strong> {{ message.sender.username }}</p>
+            <p><strong>Sent:</strong> {{ message.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+        </div>
+        <div class="message-content">
+            <p><strong>Message:</strong> {{ decrypted_message }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!-- templates/contacts.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Contacts</h2>
+    
+    {% for message in get_flashed_messages(with_categories=true) %}
+    <div class="alert alert-{{ message[1] }}">
+        {{ message[0] }}
+    </div>
+    {% endfor %}
+    
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.contact_username.label }}<br>
+            {{ form.contact_username(size=32) }}<br>
+            {{ form.contact_username.errors }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    
+    <ul>
+        {% for contact in contacts %}
+        <li>{{ contact.contact_username }} <a href="{{ url_for('delete_contact', contact_id=contact.id) }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

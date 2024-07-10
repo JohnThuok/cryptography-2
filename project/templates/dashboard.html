@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Welcome, {{ current_user.username }}!</h1>
+                <p class="card-text">This is your dashboard where you can manage your messages.</p>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <a href="{{ url_for('send_message') }}" class="btn btn-primary btn-block">Send a Message</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{{ url_for('inbox') }}" class="btn btn-success btn-block">Inbox</a>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <a href="{{ url_for('sent_messages') }}" class="btn btn-info btn-block">Sent Messages</a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{{ url_for('members') }}" class="btn btn-warning btn-block">Members</a>
+                    </div>
+                </div>
+                <a href="{{ url_for('logout') }}" class="btn btn-outline-danger btn-sm mt-3">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+            integrity="sha384-gftkLgs0LkAySbYe93ms4SsAnV7ST5uoVyaD0muEtUDLkU7Bm4UybrxqJGwUuhop"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+pbzxdqfx+qnjE+iskFgnBhBqBB2A2I6REv"
+            crossorigin="anonymous"></script>
+</body>
+</html>

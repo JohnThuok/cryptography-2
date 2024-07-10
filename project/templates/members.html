@@ -1,0 +1,22 @@
+<!-- templates/members.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Members / Contacts</h1>
+    <div class="card mt-4">
+        <div class="card-header">
+            Your Contacts
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for contact in contacts %}
+            <a href="{{ url_for('send_message', recipient_id=contact.id) }}" class="list-group-item list-group-item-action">
+                {{ contact.username }}
+            </a>
+            {% else %}
+            <li class="list-group-item">No contacts found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

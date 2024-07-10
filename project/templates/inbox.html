@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Inbox</h2>
+    <div class="message-list">
+        {% for message in messages %}
+        <div class="message-item card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">From: {{ message.sender.username }}</h5>
+                <p class="card-text">Sent: {{ message.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                <a href="{{ url_for('view_message', message_id=message.id) }}" class="btn btn-primary">View Message</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
